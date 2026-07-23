@@ -214,6 +214,13 @@ footer {
   width: 100%;
 }
 
+footer .contact {
+  color: #1a4d2e;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
 /* Responsive */
 @media (max-width: 680px) {
   body {

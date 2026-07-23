@@ -20,9 +20,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     }
     
     const formData = {
-        parent: document.getElementById('parentName').value,
-        child: document.getElementById('childName').value,
-        age: document.getElementById('childAge').value,
+        name: document.getElementById('fullName').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         kit: kitInput.value,
