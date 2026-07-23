@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run For bird Registration - October 18th</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="jj.jpg" alt="">
+    </header>
+    <div class="container" id="formContainer">
+        <div class="header">
+            <h1>🏃‍♂️ run for bird</h1>
+            <p>October 18th, 2026 | Register Your Child Now!</p>
+        </div>
+        
+        <div class="form-content">
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="parentName">Parent/Guardian Full Name *</label>
+                    <input type="text" id="parentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="childName">Child's Full Name *</label>
+                    <input type="text" id="childName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="childAge">Child's Age *</label>
+                    <input type="number" id="childAge" min="3" max="15" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kit Type *</label>
+                    <div class="kit-options">
+                        <div class="kit-card" data-value="25000" id="kit25">
+                            <strong>UGX 25,000</strong>
+                            <p>Standard Kit</p>
+                        </div>
+                        <div class="kit-card" data-value="35000" id="kit35">
+                            <strong>UGX 35,000</strong>
+                            <p>Premium Kit</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="kitType" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes (optional)</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container success" id="successMessage">
+        <div style="font-size: 60px; margin-bottom: 20px;">🎉</div>
+        <h2>Registration Successful!</h2>
+        <p>Thank you! Your child's registration has been received.</p>
+        <p>We will contact you soon.</p>
+        <button onclick="resetForm()" style="background:#667eea; margin-top:20px;">Register Another Child</button>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+    <footer>
+       <p>&copy; 2026 Avian conservation uganda. All Rights Reserved</p>
+    </footer>
+</body>
+</html>
