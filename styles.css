@@ -1,114 +1,294 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f0eb;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+header img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 280px;
 }
 
 .container {
-    background: white;
-    max-width: 600px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    overflow: hidden;
+  background: white;
+  max-width: 640px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+header + .container {
+  border-radius: 0 0 20px 20px;
 }
 
 .header {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
+  background-color: #1a4d2e;
+  color: white;
+  padding: 32px 24px;
+  text-align: center;
 }
 
 .header h1 {
-    margin: 0 0 8px 0;
-    font-size: 28px;
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.9;
+  font-weight: 400;
 }
 
 .form-content {
-    padding: 40px 30px;
+  padding: 36px 30px;
 }
 
 .form-group {
-    margin-bottom: 22px;
+  margin-bottom: 22px;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #333;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
 }
 
 input, select, textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: all 0.3s;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-sizing: border-box;
+  background-color: #fafafa;
 }
 
 input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  outline: none;
+  border-color: #1a4d2e;
+  box-shadow: 0 0 0 4px rgba(26, 77, 46, 0.08);
+  background-color: #fff;
 }
 
 .kit-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .kit-card {
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 18px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.2s;
+  background-color: #fafafa;
+}
+
+.kit-card:hover {
+  border-color: #d4833a;
+  background-color: #fff8f0;
+  transform: translateY(-2px);
 }
 
 .kit-card.selected {
-    border-color: #ff6b6b;
-    background: #fff5f5;
+  border-color: #d4833a;
+  background-color: #fff3e6;
+  box-shadow: 0 4px 12px rgba(212, 131, 58, 0.15);
+}
+
+.kit-card strong {
+  display: block;
+  font-size: 18px;
+  color: #1a4d2e;
+  margin-bottom: 4px;
+}
+
+.kit-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
 }
 
 button {
-    width: 100%;
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 16px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.3s;
+  width: 100%;
+  background-color: #1a4d2e;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.25s, transform 0.2s;
 }
 
 button:hover {
-    background: #ee5a24;
-    transform: translateY(-2px);
+  background-color: #143d24;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 .success {
-    display: none;
-    text-align: center;
-    padding: 40px 20px;
-    color: #28a745;
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.success .success-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
 .success h2 {
-    margin-top: 0;
+  margin: 0 0 12px 0;
+  color: #2d6a4f;
+  font-size: 24px;
+}
+
+.success p {
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.success button {
+  background-color: #d4833a;
+  max-width: 280px;
+  display: inline-block;
+  width: auto;
+  padding: 14px 28px;
+  margin-top: 20px;
+}
+
+.success button:hover {
+  background-color: #bf7230;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 20px;
+  color: #999;
+  font-size: 13px;
+  max-width: 640px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  body {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 24px 16px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .form-content {
+    padding: 24px 16px;
+  }
+
+  .kit-options {
+    gap: 10px;
+  }
+
+  .kit-card {
+    padding: 16px 12px;
+  }
+
+  .kit-card strong {
+    font-size: 16px;
+  }
+
+  header {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .container {
+    border-radius: 16px;
+  }
+
+  header + .container {
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 8px;
+  }
+
+  .header h1 {
+    font-size: 19px;
+  }
+
+  .form-content {
+    padding: 20px 12px;
+  }
+
+  input, select, textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .kit-options {
+    grid-template-columns: 1fr;
+  }
+
+  .success {
+    padding: 32px 16px;
+  }
 }
