@@ -19,20 +19,21 @@
         </div>
         
         <div class="form-content">
-            <form id="registrationForm">
+            <form id="registrationForm" name="registration" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="registration" />
                 <div class="form-group">
                     <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" required>
+                    <input type="text" id="fullName" name="fullName" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" required>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Email Address *</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
@@ -47,12 +48,12 @@
                             <p>Premium Kit</p>
                         </div>
                     </div>
-                    <input type="hidden" id="kitType" required>
+                    <input type="hidden" id="kitType" name="kitType" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="notes">Additional Notes (optional)</label>
-                    <textarea id="notes" rows="3"></textarea>
+                    <textarea id="notes" name="notes" rows="3"></textarea>
                 </div>
                 
                 <button type="submit">Submit Registration</button>

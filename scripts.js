@@ -1,4 +1,3 @@
-// Kit selection
 const kitCards = document.querySelectorAll('.kit-card');
 const kitInput = document.getElementById('kitType');
 
@@ -10,29 +9,27 @@ kitCards.forEach(card => {
     });
 });
 
-// Form submission
 document.getElementById('registrationForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     if (!kitInput.value) {
         alert("Please select a kit type");
         return;
     }
-    
-    const formData = {
-        name: document.getElementById('fullName').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        kit: kitInput.value,
-        notes: document.getElementById('notes').value,
-        timestamp: new Date().toISOString()
-    };
-    
-    console.log("Registration Submitted:", formData);
-    
-    // Show success
-    document.getElementById('formContainer').style.display = 'none';
-    document.getElementById('successMessage').style.display = 'block';
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+    }).then(() => {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+    }).catch(() => {
+        alert('Submission failed. Please try again.');
+    });
 });
 
 function resetForm() {
