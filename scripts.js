@@ -39,3 +39,10 @@ function resetForm() {
     kitCards.forEach(c => c.classList.remove('selected'));
     kitInput.value = '';
 }
+document.querySelectorAll('#sponsorSilver, #sponsorPlatinum, #sponsorGold').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('#sponsorSilver, #sponsorPlatinum, #sponsorGold').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    document.getElementById('sponsorshipType').value = card.querySelector('strong').innerText;
+  });
+});
