@@ -29,12 +29,15 @@ header {
 
 header img {
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
-
 .container {
   background: white;
   max-width: 640px;
