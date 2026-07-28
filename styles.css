@@ -29,7 +29,7 @@ header {
 
 header img {
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -304,3 +304,51 @@ footer .contact {
 .payment-options { display: flex; flex-direction: column; gap: 12px; }
 .payment-card { border: 1px solid #ddd; padding: 12px; border-radius: 8px; }
 .payment-card input { margin-right: 8px; }
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Hide the default radio button */
+.size-card input[type="radio"] {
+  display: none;
+}
+
+/* Size card style - matches kit-card */
+.size-card {
+  flex: 1 1 calc(33.333% - 12px);
+  min-width: 80px;
+  padding: 14px 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.size-card:hover {
+  border-color: #888;
+  transform: translateY(-2px);
+}
+
+/* Selected state */
+.size-card input[type="radio"]:checked + span {
+  color: #fff;
+}
+
+.size-card:has(input[type="radio"]:checked) {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Mobile: 2 per row */
+@media (max-width: 600px) {
+  .size-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
