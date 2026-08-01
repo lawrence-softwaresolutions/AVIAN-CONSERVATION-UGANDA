@@ -355,3 +355,27 @@ footer .contact {
     flex: 1 1 calc(50% - 12px);
   }
 }
+.upload-box {
+    border: 1px solid #ddd;
+    background: #fffaf5;
+    padding: 20px;
+    border-radius: 10px;
+}
+.upload-hint {
+    font-size: 0.9rem; 
+    color: #666; 
+    margin: 5px 0 10px;
+}
+input[type="file"] {
+    padding: 12px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    width: 100%;
+    background: #fff;
+    cursor: pointer;
+}
+.kit-card.active { 
+    border-color: #007bff; 
+    background: #eef7ff; 
+    box-shadow: 0 0 0 2px #007bff;
+}

@@ -1,48 +1,66 @@
-const kitCards = document.querySelectorAll('.kit-card');
-const kitInput = document.getElementById('kitType');
+document.addEventListener('DOMContentLoaded', function() {
 
-kitCards.forEach(card => {
-    card.addEventListener('click', () => {
-        kitCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        kitInput.value = card.dataset.value;
+    // ================== 1. KIT + SPONSORSHIP CARD SELECTION ==================
+    const allCards = document.querySelectorAll('.kit-options.kit-card');
+    const kitInput = document.getElementById('kitType');
+    const sponsorInput = document.getElementById('sponsorshipType');
+
+    allCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active from all cards first
+            allCards.forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+
+            // If it's the Event Kit
+            if(this.id === 'kit35'){
+                kitInput.value = this.dataset.value;
+                sponsorInput.value = ""; // clear sponsorship so only 1 is selected
+            } 
+            // If it's a sponsorship
+            else {
+                sponsorInput.value = this.dataset.value;
+                kitInput.value = ""; // clear kit so only 1 is selected
+            }
+        });
     });
-});
 
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    // ================== 2. FILE UPLOAD PREVIEW ==================
+    const fileInput = document.getElementById('proofOfPayment');
+    fileInput.addEventListener('change', function(){
+        if(this.files.length > 0){
+            const file = this.files[0];
+            if(file.size > 10 * 1024 * 1024){ // 10MB limit
+                alert("File is too big. Max 10MB allowed.");
+                this.value = ""; // reset
+            }
+        }
+    });
 
-    if (!kitInput.value) {
-        alert("Please select a kit type");
-        return;
+    // ================== 3. FORM SUBMIT + SUCCESS MESSAGE ==================
+    const form = document.getElementById('registrationForm');
+    const formContainer = document.getElementById('formContainer');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+        // Check if kit or sponsorship was selected
+        if(!kitInput.value &&!sponsorInput.value){
+            e.preventDefault();
+            alert("Please choose either a Kit or a Sponsorship Package");
+            return;
+        }
+
+        // Let Netlify handle submit. We just show success after 500ms
+        setTimeout(() => {
+            formContainer.style.display = 'none';
+            successMessage.style.display = 'block';
+            window.scrollTo(0,0);
+        }, 500);
+    });
+
+    window.resetForm = function() {
+        form.reset();
+        allCards.forEach(c => c.classList.remove('active'));
+        formContainer.style.display = 'block';
+        successMessage.style.display = 'none';
     }
-
-    const form = this;
-    const formData = new FormData(form);
-
-    fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
-    }).then(() => {
-        document.getElementById('formContainer').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-    }).catch(() => {
-        alert('Submission failed. Please try again.');
-    });
-});
-
-function resetForm() {
-    document.getElementById('formContainer').style.display = 'block';
-    document.getElementById('successMessage').style.display = 'none';
-    document.getElementById('registrationForm').reset();
-    kitCards.forEach(c => c.classList.remove('selected'));
-    kitInput.value = '';
-}
-document.querySelectorAll('#sponsorSilver, #sponsorPlatinum, #sponsorGold').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('#sponsorSilver, #sponsorPlatinum, #sponsorGold').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    document.getElementById('sponsorshipType').value = card.querySelector('strong').innerText;
-  });
 });
