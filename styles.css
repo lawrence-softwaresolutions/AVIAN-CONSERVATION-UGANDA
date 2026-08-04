@@ -379,3 +379,50 @@ input[type="file"] {
     background: #eef7ff; 
     box-shadow: 0 0 0 2px #007bff;
 }
+.calendar-widget {
+    background: #fff;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.calendar-widget h3 {
+    margin: 0 0 15px;
+    color: #2e7d32;
+    font-size: 1.2rem;
+}
+.mini-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+.mini-calendar th {
+    color: #666;
+    font-weight: 600;
+    padding: 8px 0;
+}
+.mini-calendar td {
+    padding: 10px 0;
+    border-radius: 50%;
+}
+.mini-calendar .highlight {
+    background: #ff5722;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+.mini-calendar .highlight::after {
+    content: "🏃";
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    font-size: 0.7rem;
+}
+.calendar-note {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #2e7d32;
+    font-weight: 600;
+}
