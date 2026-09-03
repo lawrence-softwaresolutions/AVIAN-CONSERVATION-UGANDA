@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="WhatsApp Image 2026-08-21 at 14.59.30 (1).jpeg" alt="Avian Conservation Uganda - Run for Bird">
+        <img src="PGN.jpeg" alt="Avian Conservation Uganda - Run for Bird">
     </header>
     <div class="container" id="formContainer">
         <div class="header">
@@ -100,30 +100,113 @@
   <textarea id="notes" name="notes" rows="3"></textarea>
 </div>
 
-                <div class="form-group">
-  <label>Choose Sponsorship Package </label>
+<div class="form-group">
+  <h2 style="color:#1a4d2e;">SPONSORSHIP PACKAGES</h2>
+  <p>These are our standard sponsoring packages, but we are happy to tailor an arrangement that works for you.</p>
+  <label color="#1a4d2e;">Choose Sponsorship Package <span style="color:#888; font-weight:normal; font-size:13px;">(Optional - Leave blank if you are just running)</span></label>
+  
   <div class="kit-options">
     
-    <div class="kit-card" data-value="500000" id="sponsorSilver">
-      <strong>Silver</strong>
+    <div class="kit-card" data-value="100000" id="sponsorSunbird" onclick="selectSponsorship(this)">
+      <strong style="color:#1a4d2e;">SUNBIRD</strong>
+      <p><strong>UGX 100,000</strong></p>
+      <!-- <small>Community Sponsor - Small logo + 1 VIP Kit</small> -->
+       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; color:#555;">BENEFITS:</p>
+      <ul style="margin:0; padding-left:18px; font-size:12.5px; line-height:1.7; color:#333;">
+        <li>Small logo on main event banner</li>
+        <li>Social media recognition (1 platform)</li>
+        <li>Post on ACUG Facebook page</li>
+        <li>One VIP Runner Kit</li>
+        <li>Certificate of Appreciation</li>
+        <li>One annual Supporter Membership</li>
+      </ul>
+      <div style="margin-top:12px; background:#f9f9f9; padding:6px 10px; border-radius:8px; font-size:11px; color:#777;">Ideal for: Individuals, Small Businesses, Bird Lovers</div>
+    </div>
+
+    <div class="kit-card" data-value="500000" id="sponsorShoebill" onclick="selectSponsorship(this)">
+      <strong style="color:#1a4d2e;">SHOEBILL</strong>
+      <p><strong>UGX 500,000</strong></p>
+      <!-- <small>Gold Sponsor - Medium logo + 5 VIP Kits + Booth</small> -->
+       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; color:#1a4d2e;">BENEFITS:</p>
+      <ul style="margin:0; padding-left:18px; font-size:12.5px; line-height:1.7; color:#333;">
+        <li>>Medium logo on ALL posters & banners</li>
+        <li>Branding on T-shirt (side - small) and secondary banners</li>
+        <li>Logo on secondary banner at venue</li>
+        <li>Recognition in news papers and social media platforms (2 platforms)</li>
+        <li>Post-event impact report with your logo</li>
+        <li>Exhibition booth at Sheraton Gardens</li>
+        <li>Five VIP Runner slots with Kits</li>
+        <li>Certificate of appreciation</li>
+        <li>One honorary annual membership</li>
+      </ul>
+      
+
+  </div>
+
+    <div class="kit-card" data-value="1000000" id="sponsorCrested" onclick="selectSponsorship(this)">
+      <strong style="column-rule-color: #1a4d2e;">CRESTED CRANE</strong>
+      <p><strong>UGX 1,000,000</strong></p>
+      <!-- <small>Title Sponsor - Large logo + 10 VIP Kits + Speaking Slot</small> -->
+       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; column-rule-color: #1a4d2e;">BENEFITS:</p><br>
+         <li>>Largest logo with prime placement on all event materials</li>
+        <li>Branding on T-shirts (front) and banners (main banner)</li>
+        <li>Recognition on Radios, TVs, Newspapers & All Social Media plattforms</li>
+        <li>Dedicated posts on social media and and website promotions</li>
+        <li>Speaking opportunity on stage</li>
+        <li>Prime exhibition booth at event</li>
+        <li>Ten VIP Runner Kits</li>
+        <li> Certificate of appreciation + 1 Year Corporate Membership</li>
+      </ul>
+    </div>
+    
+
+    <!-- If you really want the higher amounts you mentioned (2M, 5M, 10M), use this version instead:
+    <div class="kit-card" data-value="2000000" onclick="selectSponsorship(this)">
+      <strong>Crested Crane</strong>
       <p>UGX 2,000,000</p>
-      <small>Small size</small>
+      <small>Title - Small size but premium</small>
     </div>
-
-    <div class="kit-card" data-value="700000" id="sponsorPlatinum">
-      <strong>Platinum</strong>
-      <p>UGX 10,000,000</p>
-      <small>Largest and with prime placements</small>
-    </div>
-
-    <div class="kit-card" data-value="1000000" id="sponsorGold">
+    <div class="kit-card" data-value="5000000" onclick="selectSponsorship(this)">
       <strong>Gold</strong>
       <p>UGX 5,000,000</p>
       <small>Medium size</small>
     </div>
+    <div class="kit-card" data-value="10000000" onclick="selectSponsorship(this)">
+      <strong>Platinum</strong>
+      <p>UGX 10,000,000</p>
+      <small>Largest and with prime placements</small>
+    </div>
+    -->
 
   </div>
-  <input type="hidden" id="sponsorshipType" name="sponsorshipType" required>
+      <div style="text-align:center; margin-top:30px; background:#fff8e1; border-left:4px solid #c9a227; padding:14px; border-radius:8px; max-width:800px; margin-left:auto; margin-right:auto;">
+      <p style="margin:0; color:#555; font-size:13px;"><strong>In-kind</strong> You can sponsor with Run Kits,refreshments, printing, media airtime. We will place you at the equivalent tier.</p>
+    </div>
+
+  
+
+  <div style="margin-top:10px; display:flex; gap:10px; align-items:center;">
+    <button type="button" onclick="clearSponsorship()" style="background:#f5f5f5; border:1px solid #ccc; padding:6px 12px; border-radius:20px; font-size:12px; cursor:pointer;">✕ Clear - No Sponsorship (Just Runner)</button>
+    <span id="selectedSponsorshipText" style="font-size:13px; color:#1a4d2e; font-weight:bold;">No Sponsorship Selected</span>
+  </div>
+
+  <!-- OPTIONAL - so no required -->
+  <input type="hidden" id="sponsorshipType" name="sponsorshipType" value="">
+  <input type="hidden" id="sponsorshipAmount" name="sponsorshipAmount" value="0">
+  
+  <div id="totalAmountDisplay" style="margin-top:12px; background:#1a4d2e; color:white;
+   padding:10px; border-radius:8px; text-align:center; font-weight:bold; display:none;">
+    <!-- Total to Pay: UGX 35,000 -->
+  </div>
+  <h3 style="color:#1a4d2e;"text align="center">WHY PARTNER WITH US?</h3>
+  <!-- p>Avian Conservation Uganda (ACUG) is a leading conservation organization dedicated to protecting Uganda's rich avian biodiversity -->
+  <p>Your organisation will not simply sponsor a running event. You will be investing in conservation, communities  and uganda's natural heritage.
+    Your partnership will help transform the Grey Crowned Crane from a national symbol into a shared national conservation responsibility, while giving your organisation
+    meaningful visibility through a public campaign involving communities, schools, conservationists, institutions and the media.
+  </p>
+  <h4>To discuss sponsorship, contact us at:
+    info@acugs.org | <a href="https://www.acugs.org" class="acugs-org">www.acugs.org</a>
+  </h4>
 </div>
   <label>Payment Method </label>
   <div class="payment-options">
@@ -133,7 +216,9 @@
       <label for="pay-mobile">
         <strong>Mobile Money</strong><br>
         +256794 674406<br>
-        <small>Account Name: Tumwesingye Elasmus</small>
+        <small>Account Name: Tumwesingye Elasmus</small><br> <p>or</p>
+        <p>+256 783172500</p>
+        <small>Account Name: Nakalule Catherine</small>
       </label>
     </div>
 
@@ -189,6 +274,7 @@
     </div>
 
     <footer>
+      <P class="delivery">Delivery of kits to start on 13th October 2026.</P>
        <p class="contact">Contact us on +256 794 674 406</p>
        <p>&copy; 2026 Avian conservation uganda. All Rights Reserved</p>
     </footer>

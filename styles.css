@@ -426,3 +426,11 @@ input[type="file"] {
     color: #2e7d32;
     font-weight: 600;
 }
+.kit-card.active {
+  border: 2px solid #1a4d2e !important;
+  background: #e8f5e9 !important;
+  transform: scale(1.02);
+}
+.kit-card { cursor:pointer; transition:0.2s; }
+.kit-card:hover { border-color:#1a4d2e; }
+.delivery { color:#1a4d2e; font-weight:600; font-size:14px; margin-bottom:6px; }text-align:center;
