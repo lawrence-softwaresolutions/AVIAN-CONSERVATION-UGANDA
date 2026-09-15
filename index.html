@@ -4,279 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Run for Birds Registration - October 18th</title>
-    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="PGN.jpeg" alt="Avian Conservation Uganda - Run for Bird">
+        <img src="PGN.jpeg" alt="Avian Conservation Uganda - Run for Birds">
     </header>
     <div class="container" id="formContainer">
         <div class="header">
             <h1>Run for Birds</h1>
             <p>October 18th, 2026 | Register Now</p>
         </div>
-        <!-- OCTOBER 2026 CALENDAR -->
-<div class="calendar-widget">
-  <h3>October 2026</h3>
-  <table class="mini-calendar">
-    <thead>
-      <tr>
-        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-      <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-      <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="highlight">18</td></tr>
-      <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
-      <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
-    </tbody>
-  </table>
-  <p class="calendar-note"> <strong>Run for Birds</strong> - Sunday 18th October 2026</p>
-</div>
+        <div class="calendar-widget">
+          <h3>October 2026</h3>
+          <table class="mini-calendar">
+            <thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+            <tbody>
+              <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+              <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+              <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="highlight">18</td></tr>
+              <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+              <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+            </tbody>
+          </table>
+          <p class="calendar-note"><strong>Run for Birds</strong> - Sunday 18th October 2026</p>
+        </div>
         <div class="form-content">
-            <form id="registrationForm" name="registration" method="POST" data-netlify="true">
+            <form id="registrationForm" name="registration" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="registration" />
+                <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
+
+                <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" required></div>
+                <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
+                <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+
                 <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>choose Kit *</label>
+                    <label>Choose Kit *</label>
                     <div class="kit-options">
-                        <div class="kit-card" data-value="35000" id="kit35">
-                            <strong>UGX 35,000</strong>
-                            <p>Event Kit</p>
-                        </div>
+                        <div class="kit-card" data-value="35000" id="kit35" onclick="selectKit(this)"><strong>UGX 35,000</strong><p>Event Kit</p></div>
                     </div>
                     <input type="hidden" id="kitType" name="kitType" required>
                 </div>
 
-<div class="form-group">
-  <label>Choose Size *</label>
-  <div class="size-options">
-    <label class="size-card">
-      <input type="radio" name="size" value="Small" required>
-      <span>Small</span>
-    </label>
-    <label class="size-card">
-      <input type="radio" name="size" value="Medium">
-      <span>Medium</span>
-    </label>
-    <label class="size-card">
-      <input type="radio" name="size" value="Large">
-      <span>Large</span>
-    </label>
-    <label class="size-card">
-      <input type="radio" name="size" value="XL">
-      <span>XL</span>
-    </label>
-    <label class="size-card">
-      <input type="radio" name="size" value="XXL">
-      <span>XXL</span>
-    </label>
-    <label class="size-card">
-      <input type="radio" name="size" value="XXXL">
-      <span>XXXL</span>
-    </label>
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="notes">Additional Notes (optional)</label>
-  <textarea id="notes" name="notes" rows="3"></textarea>
-</div>
-
-<div class="form-group">
-  <h2 style="color:#1a4d2e;">SPONSORSHIP PACKAGES</h2>
-  <p>These are our standard sponsoring packages, but we are happy to tailor an arrangement that works for you.</p>
-  <label color="#1a4d2e;">Choose Sponsorship Package <span style="color:#888; font-weight:normal; font-size:13px;">(Optional - Leave blank if you are just running)</span></label>
-  
-  <div class="kit-options">
-    
-    <div class="kit-card" data-value="100000" id="sponsorSunbird" onclick="selectSponsorship(this)">
-      <strong style="color:#1a4d2e;">SUNBIRD</strong>
-      <p><strong>UGX 100,000</strong></p>
-      <!-- <small>Community Sponsor - Small logo + 1 VIP Kit</small> -->
-       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; color:#555;">BENEFITS:</p>
-      <ul style="margin:0; padding-left:18px; font-size:12.5px; line-height:1.7; color:#333;">
-        <li>Small logo on main event banner</li>
-        <li>Social media recognition (1 platform)</li>
-        <li>Post on ACUG Facebook page</li>
-        <li>One VIP Runner Kit</li>
-        <li>Certificate of Appreciation</li>
-        <li>One annual Supporter Membership</li>
-      </ul>
-      <div style="margin-top:12px; background:#f9f9f9; padding:6px 10px; border-radius:8px; font-size:11px; color:#777;">Ideal for: Individuals, Small Businesses, Bird Lovers</div>
-    </div>
-
-    <div class="kit-card" data-value="500000" id="sponsorShoebill" onclick="selectSponsorship(this)">
-      <strong style="color:#1a4d2e;">SHOEBILL</strong>
-      <p><strong>UGX 500,000</strong></p>
-      <!-- <small>Gold Sponsor - Medium logo + 5 VIP Kits + Booth</small> -->
-       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; color:#1a4d2e;">BENEFITS:</p>
-      <ul style="margin:0; padding-left:18px; font-size:12.5px; line-height:1.7; color:#333;">
-        <li>>Medium logo on ALL posters & banners</li>
-        <li>Branding on T-shirt (side - small) and secondary banners</li>
-        <li>Logo on secondary banner at venue</li>
-        <li>Recognition in news papers and social media platforms (2 platforms)</li>
-        <li>Post-event impact report with your logo</li>
-        <li>Exhibition booth at Sheraton Gardens</li>
-        <li>Five VIP Runner slots with Kits</li>
-        <li>Certificate of appreciation</li>
-        <li>One honorary annual membership</li>
-      </ul>
-      
-
-  </div>
-
-    <div class="kit-card" data-value="1000000" id="sponsorCrested" onclick="selectSponsorship(this)">
-      <strong style="column-rule-color: #1a4d2e;">CRESTED CRANE</strong>
-      <p><strong>UGX 1,000,000</strong></p>
-      <!-- <small>Title Sponsor - Large logo + 10 VIP Kits + Speaking Slot</small> -->
-       <p style="font-size:12px; font-weight:bold; margin:0 0 6px; column-rule-color: #1a4d2e;">BENEFITS:</p><br>
-         <li>>Largest logo with prime placement on all event materials</li>
-        <li>Branding on T-shirts (front) and banners (main banner)</li>
-        <li>Recognition on Radios, TVs, Newspapers & All Social Media plattforms</li>
-        <li>Dedicated posts on social media and and website promotions</li>
-        <li>Speaking opportunity on stage</li>
-        <li>Prime exhibition booth at event</li>
-        <li>Ten VIP Runner Kits</li>
-        <li> Certificate of appreciation + 1 Year Corporate Membership</li>
-      </ul>
-    </div>
-    
-
-    <!-- If you really want the higher amounts you mentioned (2M, 5M, 10M), use this version instead:
-    <div class="kit-card" data-value="2000000" onclick="selectSponsorship(this)">
-      <strong>Crested Crane</strong>
-      <p>UGX 2,000,000</p>
-      <small>Title - Small size but premium</small>
-    </div>
-    <div class="kit-card" data-value="5000000" onclick="selectSponsorship(this)">
-      <strong>Gold</strong>
-      <p>UGX 5,000,000</p>
-      <small>Medium size</small>
-    </div>
-    <div class="kit-card" data-value="10000000" onclick="selectSponsorship(this)">
-      <strong>Platinum</strong>
-      <p>UGX 10,000,000</p>
-      <small>Largest and with prime placements</small>
-    </div>
-    -->
-
-  </div>
-      <div style="text-align:center; margin-top:30px; background:#fff8e1; border-left:4px solid #c9a227; padding:14px; border-radius:8px; max-width:800px; margin-left:auto; margin-right:auto;">
-      <p style="margin:0; color:#555; font-size:13px;"><strong>In-kind</strong> You can sponsor with Run Kits,refreshments, printing, media airtime. We will place you at the equivalent tier.</p>
-    </div>
-
-  
-
-  <div style="margin-top:10px; display:flex; gap:10px; align-items:center;">
-    <button type="button" onclick="clearSponsorship()" style="background:#f5f5f5; border:1px solid #ccc; padding:6px 12px; border-radius:20px; font-size:12px; cursor:pointer;">✕ Clear - No Sponsorship (Just Runner)</button>
-    <span id="selectedSponsorshipText" style="font-size:13px; color:#1a4d2e; font-weight:bold;">No Sponsorship Selected</span>
-  </div>
-
-  <!-- OPTIONAL - so no required -->
-  <input type="hidden" id="sponsorshipType" name="sponsorshipType" value="">
-  <input type="hidden" id="sponsorshipAmount" name="sponsorshipAmount" value="0">
-  
-  <div id="totalAmountDisplay" style="margin-top:12px; background:#1a4d2e; color:white;
-   padding:10px; border-radius:8px; text-align:center; font-weight:bold; display:none;">
-    <!-- Total to Pay: UGX 35,000 -->
-  </div>
-  <h3 style="color:#1a4d2e;"text align="center">WHY PARTNER WITH US?</h3>
-  <!-- p>Avian Conservation Uganda (ACUG) is a leading conservation organization dedicated to protecting Uganda's rich avian biodiversity -->
-  <p>Your organisation will not simply sponsor a running event. You will be investing in conservation, communities  and uganda's natural heritage.
-    Your partnership will help transform the Grey Crowned Crane from a national symbol into a shared national conservation responsibility, while giving your organisation
-    meaningful visibility through a public campaign involving communities, schools, conservationists, institutions and the media.
-  </p>
-  <h4>To discuss sponsorship, contact us at:
-    info@acugs.org | <a href="https://www.acugs.org" class="acugs-org">www.acugs.org</a>
-  </h4>
-</div>
-  <label>Payment Method </label>
-  <div class="payment-options">
-    
-    <div class="payment-card">
-      <input type="radio" id="pay-mobile" name="paymentMethod" value="Mobile Money" required>
-      <label for="pay-mobile">
-        <strong>Mobile Money</strong><br>
-        +256794 674406<br>
-        <small>Account Name: Tumwesingye Elasmus</small><br> <p>or</p>
-        <p>+256 783172500</p>
-        <small>Account Name: Nakalule Catherine</small>
-      </label>
-    </div>
-
-    <div class="payment-card">
-      <input type="radio" id="pay-ugx" name="paymentMethod" value="Bank UGX" required>
-      <label for="pay-ugx">
-        <strong>Bank Transfer - UGX</strong><br>
-        Account Number: 0229692001<br>
-        <small>Account Name: Avian Conservation Uganda</small>
-      </label>
-    </div>
-
-    <div class="payment-card">
-      <input type="radio" id="pay-usd" name="paymentMethod" value="Bank USD" required>
-      <label for="pay-usd">
-        <strong>Bank Transfer - USD</strong><br>
-        Account Number: 0229692002<br>
-        <small>Account Name: Avian Conservation Uganda</small>
-      </label>
-    </div>
-
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="paymentRef">Payment Reference / Transaction ID *</label>
-  <input type="text" id="paymentRef" name="paymentRef" placeholder="Enter MM ref or Bank slip number" required>
-</div>
-<!-- NEW: PROOF OF PAYMENT UPLOAD - LIKE YOUR SCREENSHOT -->
-                <div class="form-group upload-box">
-                  <label for="proofOfPayment">Attached proof of payment (POP) screenshot <span style="color:red;">*</span></label>
-                  <p class="upload-hint">Upload 1 supported file: image. Max 10 MB.</p>
-                  <input type="file" id="proofOfPayment" name="proofOfPayment" accept="image/*" required>
+                <div class="form-group">
+                  <label>Choose Size *</label>
+                  <div class="size-options">
+                    <label class="size-card"><input type="radio" name="size" value="Small" required><span>Small</span></label>
+                    <label class="size-card"><input type="radio" name="size" value="Medium"><span>Medium</span></label>
+                    <label class="size-card"><input type="radio" name="size" value="Large"><span>Large</span></label>
+                    <label class="size-card"><input type="radio" name="size" value="XL"><span>XL</span></label>
+                    <label class="size-card"><input type="radio" name="size" value="XXL"><span>XXL</span></label>
+                    <label class="size-card"><input type="radio" name="size" value="XXXL"><span>XXXL</span></label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="notes">Additional Notes (optional)</label>
-                  <textarea id="notes" name="notes" rows="3"></textarea>
+                  <h2 style="color:#1a4d2e;">SPONSORSHIP PACKAGES</h2>
+                  <p style="font-size:13px;color:#555;margin:6px 0 12px">Standard packages, we can tailor arrangement.</p>
+                  <label style="color:#1a4d2e;">Choose Sponsorship <span style="color:#888;font-weight:normal;font-size:12px">(Optional)</span></label>
+                  <div class="kit-options sponsorship-grid">
+                    <div class="kit-card sponsor" data-value="100000" id="sponsorSunbird" onclick="selectSponsorship(this)">
+                      <strong style="color:#1a4d2e;">SUNBIRD</strong><p><strong>UGX 100,000</strong></p>
+                      <p style="font-size:11px;font-weight:bold;margin:6px 0;color:#555;">BENEFITS:</p>
+                      <ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:#333;text-align:left;">
+                        <li>Small logo on main banner</li><li>Social media recognition (1 platform)</li><li>Post on ACUG Facebook</li><li>One VIP Runner Kit</li><li>Certificate</li><li>Annual Supporter Membership</li>
+                      </ul>
+                    </div>
+                    <div class="kit-card sponsor" data-value="500000" id="sponsorShoebill" onclick="selectSponsorship(this)">
+                      <strong style="color:#1a4d2e;">SHOEBILL</strong><p><strong>UGX 500,000</strong></p>
+                      <p style="font-size:11px;font-weight:bold;margin:6px 0;color:#1a4d2e;">BENEFITS:</p>
+                      <ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:#333;text-align:left;">
+                        <li>Medium logo on ALL posters</li><li>Branding on T-shirt side</li><li>Logo on secondary banner</li><li>Recognition in newspapers & 2 platforms</li><li>Post-event impact report</li><li>Exhibition booth at Sheraton</li><li>Five VIP Kits</li><li>Honorary membership</li>
+                      </ul>
+                    </div>
+                    <div class="kit-card sponsor" data-value="1000000" id="sponsorCrested" onclick="selectSponsorship(this)">
+                      <strong style="color:#1a4d2e;">CRESTED CRANE</strong><p><strong>UGX 1,000,000</strong></p>
+                      <p style="font-size:11px;font-weight:bold;margin:6px 0;color:#1a4d2e;">BENEFITS:</p>
+                      <ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:#333;text-align:left;">
+                        <li>Largest logo prime placement</li><li>Branding on T-shirts front</li><li>Radios, TVs, Newspapers & All Social</li><li>Dedicated social posts</li><li>Speaking opportunity</li><li>Prime booth</li><li>Ten VIP Kits</li><li>Certificate + 1 Year Corporate Membership</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div style="text-align:center;margin-top:14px;background:#fff8e1;border-left:4px solid #c9a227;padding:10px;border-radius:8px;font-size:12px;color:#555;"><strong>In-kind:</strong> You can sponsor with Kits, refreshments, printing, media airtime. We will place you at equivalent tier.</div>
+                  <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+                    <button type="button" onclick="clearSponsorship()" style="background:#f5f5f5;border:1px solid #ccc;padding:6px 12px;border-radius:20px;font-size:12px;cursor:pointer;width:auto;">✕ Clear - No Sponsorship</button>
+                    <span id="selectedSponsorshipText" style="font-size:12px;color:#1a4d2e;font-weight:bold;">No Sponsorship - Just Runner Kit (UGX 35,000)</span>
+                  </div>
+                  <input type="hidden" id="sponsorshipType" name="sponsorshipType" value=""><input type="hidden" id="sponsorshipAmount" name="sponsorshipAmount" value="0">
+                  <div id="totalAmountDisplay" style="margin-top:12px;background:#1a4d2e;color:white;padding:12px;border-radius:8px;text-align:center;font-weight:bold;">Total: UGX 35,000</div>
                 </div>
 
-                
-                <button type="submit">Submit Registration</button>
+                <div class="form-group" style="text-align:center;margin:20px 0"><h3 style="color:#1a4d2e;">WHY PARTNER WITH US?</h3><p style="font-size:13px;line-height:1.6;color:#444">Your organisation will not simply sponsor a running event. You will be investing in conservation, communities and Uganda's natural heritage. Your partnership will help transform the Grey Crowned Crane from a national symbol into a shared responsibility.</p><h4 style="margin-top:10px;font-size:13px">Contact: info@acugs.org | <a href="https://www.acugs.org">www.acugs.org</a></h4></div>
+
+                <div class="form-group">
+                  <label>Payment Method *</label>
+                  <div class="payment-options">
+                    <div class="payment-card"><input type="radio" id="pay-mobile" name="paymentMethod" value="Mobile Money" required><label for="pay-mobile"><strong>Mobile Money</strong><br>+256794 674406<br><small>Tumwesingye Elasmus</small><br>or<br>+256 783172500<br><small>Nakalule Catherine</small></label></div>
+                    <div class="payment-card"><input type="radio" id="pay-ugx" name="paymentMethod" value="Bank UGX" required><label for="pay-ugx"><strong>Bank Transfer - UGX</strong><br>0229692001<br><small>Avian Conservation Uganda</small></label></div>
+                    <div class="payment-card"><input type="radio" id="pay-usd" name="paymentMethod" value="Bank USD" required><label for="pay-usd"><strong>Bank Transfer - USD</strong><br>0229692002<br><small>Avian Conservation Uganda</small></label></div>
+                  </div>
+                </div>
+
+                <div class="form-group"><label for="paymentRef">Payment Reference / Transaction ID *</label><input type="text" id="paymentRef" name="paymentRef" placeholder="Enter MM ref or Bank slip number" required></div>
+                <div class="form-group upload-box"><label for="proofOfPayment">Attached proof of payment (POP) screenshot *</label><p class="upload-hint">Upload 1 supported file: image. Max 10 MB.</p><input type="file" id="proofOfPayment" name="proofOfPayment" accept="image/*" required></div>
+                <div class="form-group"><label for="notes">Additional Notes (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
+                <button type="submit" id="submitBtn">Submit Registration</button>
             </form>
         </div>
     </div>
-    
-    <div class="container success" id="successMessage">
-        <div class="success-icon">&#10003;</div>
-        <h2>Registration Successful</h2>
-        <p>Thank you for registering.</p>
-        <p>We will contact you soon.</p>
-        <button onclick="resetForm()">Register again</button>
-    </div>
-
-    <footer>
-      <P class="delivery">Delivery of kits to start on 13th October 2026.</P>
-       <p class="contact">Contact us on +256 794 674 406</p>
-       <p>&copy; 2026 Avian conservation uganda. All Rights Reserved</p>
-    </footer>
+    <div class="container success" id="successMessage"><div class="success-icon">&#10003;</div><h2>Registration Successful</h2><p>Thank you for registering.</p><p>We will contact you soon.</p><button onclick="resetForm()">Register again</button></div>
+    <footer><p class="delivery">Delivery of kits to start on 13th October 2026.</p><p class="contact">Contact us on +256 794 674 406</p><p>&copy; 2026 Avian Conservation Uganda. All Rights Reserved</p></footer>
 </body>
 </html>

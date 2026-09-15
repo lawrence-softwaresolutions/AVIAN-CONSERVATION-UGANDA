@@ -434,3 +434,12 @@ input[type="file"] {
 .kit-card { cursor:pointer; transition:0.2s; }
 .kit-card:hover { border-color:#1a4d2e; }
 .delivery { color:#1a4d2e; font-weight:600; font-size:14px; margin-bottom:6px; }text-align:center;
+/* FIXES FOR RESPONSIVENESS */
+.sponsorship-grid{grid-template-columns:1fr;}
+@media(min-width:700px){.sponsorship-grid{grid-template-columns:1fr 1fr;}.sponsorship-grid #sponsorCrested{grid-column: span 2;}}
+@media(min-width:900px){.sponsorship-grid{grid-template-columns:1fr 1fr 1fr;}.sponsorship-grid #sponsorCrested{grid-column: span 1;}}
+.mini-calendar{width:100%;table-layout:fixed;}
+.mini-calendar td,.mini-calendar th{font-size:14px;padding:8px 2px;}
+@media(max-width:480px){.kit-options{grid-template-columns:1fr;}.mini-calendar td,.mini-calendar th{font-size:12px;padding:6px 0;}}
+.delivery{color:#1a4d2e;font-weight:600;font-size:14px;margin-bottom:6px;text-align:center;}
+#totalAmountDisplay{transition:all 0.3s;}
